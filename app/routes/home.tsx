@@ -218,7 +218,7 @@ export default function Home() {
               {/* App Download Buttons */}
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
                 <a
-                  href="#"
+                  href="https://apps.apple.com/th/app/%E0%B8%AD%E0%B8%B2%E0%B8%95-%E0%B8%99-%E0%B8%AD%E0%B8%A2/id6759367582"
                   className="flex items-center justify-center bg-gray-900 text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition w-full sm:w-auto transform hover:-translate-y-1"
                 >
                   <Apple className="w-8 h-8 mr-3" />
@@ -228,7 +228,7 @@ export default function Home() {
                   </div>
                 </a>
                 <a
-                  href="#"
+                  href="https://play.google.com/store/apps/details?id=com.ahteenoidelivery.appuser&fbclid=IwY2xjawRtNGJleHRuA2FlbQIxMABicmlkETEwU2EwWldJU0N3WXpuRFFOc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHmLCjeGLSrMv7ToK039Czj8zX0varOiNoLz_w28TJnwCgGoHnvegaE-jlbBq_aem_IZj1DwcF-Oo3g6WgqFpFXA"
                   className="flex items-center justify-center bg-white border border-gray-200 text-gray-900 px-6 py-3 rounded-xl hover:bg-gray-50 transition shadow-sm w-full sm:w-auto transform hover:-translate-y-1"
                 >
                   <Play className="w-8 h-8 mr-3 text-primary-500 fill-primary-500" />
@@ -629,19 +629,19 @@ export default function Home() {
                   </button>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary-500 transition">
+                  <button onClick={()=>setShowQRModal(true)} className="hover:text-primary-500 transition">
                     ส่งพัสดุด่วน
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary-500 transition">
+                  <button onClick={()=>setShowQRModal(true)} className="hover:text-primary-500 transition">
                     สำหรับร้านค้า
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary-500 transition">
+                  <button onClick={()=>setShowQRModal(true)} className="hover:text-primary-500 transition">
                     สำหรับองค์กร (Corporate)
-                  </a>
+                  </button>
                 </li>
               </ul>
             </div>
@@ -656,7 +656,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-center">
                   <Phone className="w-5 h-5 mr-3 text-primary-500 flex-shrink-0" />
-                  <span>02-XXX-XXXX</span>
+                  <span>085-598-9548</span>
                 </li>
                 <li className="flex items-center">
                   <Mail className="w-5 h-5 mr-3 text-primary-500 flex-shrink-0" />
@@ -710,7 +710,7 @@ export default function Home() {
                   {/* Placeholder for QR Code */}
                   <div className="p-4">
                     <img
-                      src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://ahteenoi.com/download"
+                      src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://www.facebook.com/profile.php?id=61577899289210"
                       alt="QR Code"
                       className="w-full h-full"
                     />
