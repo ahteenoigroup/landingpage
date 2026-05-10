@@ -117,13 +117,6 @@ export default function Home() {
               >
                 <Download className="w-4 h-4 mr-2" /> โหลดแอปเลย
               </button>
-
-              {/* <a
-                href="#download"
-                className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-full font-medium transition shadow-md hover:shadow-lg flex items-center"
-              >
-                <Download className="w-4 h-4 mr-2" /> โหลดแอปเลย
-              </a> */}
             </div>
 
             {/* Mobile menu button */}
