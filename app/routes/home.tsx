@@ -22,7 +22,7 @@ import {
   Globe,
   Camera,
   MessageCircle,
-} from 'lucide-react';
+} from "lucide-react";
 
 // Fallback for missing brand icons in Lucide v1.x
 const Facebook = Globe;
@@ -33,13 +33,19 @@ const Motorcycle = Motorbike;
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "อาตี๋น้อย เดลิเวอรี่ - สั่งอาหาร ส่งพัสดุ รวดเร็วทันใจ" },
-    { name: "description", content: "บริการจัดส่งอาหาร เครื่องดื่ม และพัสดุ ที่รู้ใจคุณที่สุด ส่งไว ปลอดภัย ค่าส่งเป็นมิตร สั่งง่ายผ่านแอปพลิเคชันได้แล้ววันนี้" },
+    {
+      name: "description",
+      content:
+        "บริการจัดส่งอาหาร เครื่องดื่ม และพัสดุ ที่รู้ใจคุณที่สุด ส่งไว ปลอดภัย ค่าส่งเป็นมิตร สั่งง่ายผ่านแอปพลิเคชันได้แล้ววันนี้",
+    },
   ];
 }
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const [showQRModal, setShowQRModal] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,7 +64,9 @@ export default function Home() {
       <nav
         id="navbar"
         className={`fixed w-full z-50 transition-all duration-300 ${
-          isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm h-16" : "bg-transparent h-20"
+          isScrolled
+            ? "bg-white/90 backdrop-blur-md shadow-sm h-16"
+            : "bg-transparent h-20"
         } flex items-center`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -75,28 +83,47 @@ export default function Home() {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8 items-center">
-              <a href="#home" className="text-gray-700 hover:text-primary-600 font-medium transition">
+              <a
+                href="#home"
+                className="text-gray-700 hover:text-primary-600 font-medium transition"
+              >
                 หน้าแรก
               </a>
-              <a href="#services" className="text-gray-700 hover:text-primary-600 font-medium transition">
+              <a
+                href="#services"
+                className="text-gray-700 hover:text-primary-600 font-medium transition"
+              >
                 บริการของเรา
               </a>
-              <a href="#how-it-works" className="text-gray-700 hover:text-primary-600 font-medium transition">
+              <a
+                href="#how-it-works"
+                className="text-gray-700 hover:text-primary-600 font-medium transition"
+              >
                 วิธีใช้งาน
               </a>
-              <a href="#partners" className="text-gray-700 hover:text-primary-600 font-medium transition">
+              <a
+                href="#partners"
+                className="text-gray-700 hover:text-primary-600 font-medium transition"
+              >
                 ร่วมงานกับเรา
               </a>
             </div>
 
             {/* CTA Button Desktop */}
             <div className="hidden md:flex items-center space-x-4">
-              <a
+              <button
+                onClick={() => setShowQRModal(true)}
+                className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-full font-medium transition shadow-md hover:shadow-lg flex items-center"
+              >
+                <Download className="w-4 h-4 mr-2" /> โหลดแอปเลย
+              </button>
+
+              {/* <a
                 href="#download"
                 className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-full font-medium transition shadow-md hover:shadow-lg flex items-center"
               >
                 <Download className="w-4 h-4 mr-2" /> โหลดแอปเลย
-              </a>
+              </a> */}
             </div>
 
             {/* Mobile menu button */}
@@ -105,7 +132,11 @@ export default function Home() {
                 onClick={toggleMenu}
                 className="text-gray-700 hover:text-primary-600 focus:outline-none"
               >
-                {isMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+                {isMenuOpen ? (
+                  <X className="w-7 h-7" />
+                ) : (
+                  <Menu className="w-7 h-7" />
+                )}
               </button>
             </div>
           </div>
@@ -180,8 +211,8 @@ export default function Home() {
                 จัดให้!
               </h1>
               <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
-                บริการจัดส่งอาหาร เครื่องดื่ม และพัสดุ ที่รู้ใจคุณที่สุด ส่งไว ปลอดภัย ค่าส่งเป็นมิตร
-                สั่งง่ายผ่านแอปพลิเคชันได้แล้ววันนี้
+                บริการจัดส่งอาหาร เครื่องดื่ม และพัสดุ ที่รู้ใจคุณที่สุด ส่งไว
+                ปลอดภัย ค่าส่งเป็นมิตร สั่งง่ายผ่านแอปพลิเคชันได้แล้ววันนี้
               </p>
 
               {/* App Download Buttons */}
@@ -203,7 +234,9 @@ export default function Home() {
                   <Play className="w-8 h-8 mr-3 text-primary-500 fill-primary-500" />
                   <div className="text-left">
                     <div className="text-xs">GET IT ON</div>
-                    <div className="text-lg font-semibold -mt-1">Google Play</div>
+                    <div className="text-lg font-semibold -mt-1">
+                      Google Play
+                    </div>
                   </div>
                 </a>
               </div>
@@ -211,10 +244,12 @@ export default function Home() {
               {/* Trust Indicators */}
               <div className="mt-10 flex items-center justify-center lg:justify-start space-x-6 text-sm text-gray-500 font-medium">
                 <div className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-green-500 mr-1" /> ร้านค้ากว่า 1,000+ ร้าน
+                  <CheckCircle className="w-4 h-4 text-green-500 mr-1" />{" "}
+                  ร้านค้ากว่า 1,000+ ร้าน
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-green-500 mr-1" /> ไรเดอร์พร้อมส่ง 24 ชม.
+                  <CheckCircle className="w-4 h-4 text-green-500 mr-1" />{" "}
+                  ไรเดอร์พร้อมส่ง 24 ชม.
                 </div>
               </div>
             </div>
@@ -238,12 +273,19 @@ export default function Home() {
                         <MapPin className="text-primary-600 w-5 h-5" />
                       </div>
                       <div>
-                        <div className="text-xs text-gray-500">กำลังจัดส่งไปที่</div>
-                        <div className="text-sm font-semibold truncate w-32">บ้านของคุณ</div>
+                        <div className="text-xs text-gray-500">
+                          กำลังจัดส่งไปที่
+                        </div>
+                        <div className="text-sm font-semibold truncate w-32">
+                          บ้านของคุณ
+                        </div>
                       </div>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-1.5 mb-2">
-                      <div className="bg-primary-500 h-1.5 rounded-full" style={{ width: "70%" }}></div>
+                      <div
+                        className="bg-primary-500 h-1.5 rounded-full"
+                        style={{ width: "70%" }}
+                      ></div>
                     </div>
                     <div className="text-xs text-center text-primary-600 font-medium">
                       ไรเดอร์กำลังเดินทาง... 5 นาที
@@ -267,9 +309,12 @@ export default function Home() {
             <h2 className="text-primary-600 font-semibold tracking-wide uppercase mb-2">
               บริการของเรา
             </h2>
-            <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">ครบจบในแอปเดียว</h3>
+            <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              ครบจบในแอปเดียว
+            </h3>
             <p className="text-gray-600 text-lg">
-              อาตี๋น้อย เดลิเวอรี่ ตอบโจทย์ทุกไลฟ์สไตล์ของคุณ ไม่ว่าจะกิน ดื่ม หรือส่งของ เราพร้อมดูแล
+              อาตี๋น้อย เดลิเวอรี่ ตอบโจทย์ทุกไลฟ์สไตล์ของคุณ ไม่ว่าจะกิน ดื่ม
+              หรือส่งของ เราพร้อมดูแล
             </p>
           </div>
 
@@ -279,9 +324,12 @@ export default function Home() {
               <div className="w-16 h-16 bg-red-100 text-red-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-red-500 group-hover:text-white transition-all duration-300">
                 <Utensils className="w-8 h-8" />
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-3">สั่งอาหาร (Food)</h4>
+              <h4 className="text-xl font-bold text-gray-900 mb-3">
+                สั่งอาหาร (Food)
+              </h4>
               <p className="text-gray-600">
-                รวบรวมร้านเด็ด ร้านดัง และสตรีทฟู้ดใกล้บ้านคุณ จัดส่งร้อนๆ ถึงมือ
+                รวบรวมร้านเด็ด ร้านดัง และสตรีทฟู้ดใกล้บ้านคุณ จัดส่งร้อนๆ
+                ถึงมือ
               </p>
             </div>
 
@@ -290,9 +338,12 @@ export default function Home() {
               <div className="w-16 h-16 bg-blue-100 text-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
                 <Package className="w-8 h-8" />
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-3">ส่งพัสดุ (Express)</h4>
+              <h4 className="text-xl font-bold text-gray-900 mb-3">
+                ส่งพัสดุ (Express)
+              </h4>
               <p className="text-gray-600">
-                รับ-ส่งเอกสาร พัสดุ ด่วนทันใจ ภายในวันเดียว ปลอดภัย เช็คสถานะได้เรียลไทม์
+                รับ-ส่งเอกสาร พัสดุ ด่วนทันใจ ภายในวันเดียว ปลอดภัย
+                เช็คสถานะได้เรียลไทม์
               </p>
             </div>
 
@@ -301,9 +352,12 @@ export default function Home() {
               <div className="w-16 h-16 bg-green-100 text-green-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-green-500 group-hover:text-white transition-all duration-300">
                 <ShoppingCart className="w-8 h-8" />
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-3">ฝากซื้อของ (Mart)</h4>
+              <h4 className="text-xl font-bold text-gray-900 mb-3">
+                ฝากซื้อของ (Mart)
+              </h4>
               <p className="text-gray-600">
-                ของสด ของใช้ในซุปเปอร์มาร์เก็ต หรือของร้านสะดวกซื้อ เราอาสาไปซื้อให้
+                ของสด ของใช้ในซุปเปอร์มาร์เก็ต หรือของร้านสะดวกซื้อ
+                เราอาสาไปซื้อให้
               </p>
             </div>
 
@@ -312,9 +366,12 @@ export default function Home() {
               <div className="w-16 h-16 bg-purple-100 text-purple-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-purple-500 group-hover:text-white transition-all duration-300">
                 <Car className="w-8 h-8" />
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-3">เรียกวิน (Ride)</h4>
+              <h4 className="text-xl font-bold text-gray-900 mb-3">
+                เรียกวิน (Ride)
+              </h4>
               <p className="text-gray-600">
-                เรียกมอเตอร์ไซค์รับจ้าง ไปส่งทุกที่หมายอย่างรวดเร็วและปลอดภัยในราคายุติธรรม
+                เรียกมอเตอร์ไซค์รับจ้าง
+                ไปส่งทุกที่หมายอย่างรวดเร็วและปลอดภัยในราคายุติธรรม
               </p>
             </div>
           </div>
@@ -342,8 +399,12 @@ export default function Home() {
               <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-lg mb-6 border-4 border-primary-50">
                 <span className="text-3xl font-bold text-primary-500">1</span>
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">เลือกร้านและเมนู</h4>
-              <p className="text-gray-600">ค้นหาร้านโปรดของคุณ เลื่อนดูเมนู และกดเพิ่มลงตะกร้า</p>
+              <h4 className="text-xl font-bold text-gray-900 mb-2">
+                เลือกร้านและเมนู
+              </h4>
+              <p className="text-gray-600">
+                ค้นหาร้านโปรดของคุณ เลื่อนดูเมนู และกดเพิ่มลงตะกร้า
+              </p>
             </div>
 
             {/* Step 2 */}
@@ -351,9 +412,12 @@ export default function Home() {
               <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-lg mb-6 border-4 border-primary-50">
                 <span className="text-3xl font-bold text-primary-500">2</span>
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">ยืนยันและชำระเงิน</h4>
+              <h4 className="text-xl font-bold text-gray-900 mb-2">
+                ยืนยันและชำระเงิน
+              </h4>
               <p className="text-gray-600">
-                ตรวจสอบออเดอร์ เลือกวิธีชำระเงินที่สะดวก ไม่ว่าจะเป็นเงินสดหรือโอน
+                ตรวจสอบออเดอร์ เลือกวิธีชำระเงินที่สะดวก
+                ไม่ว่าจะเป็นเงินสดหรือโอน
               </p>
             </div>
 
@@ -362,8 +426,12 @@ export default function Home() {
               <div className="w-24 h-24 bg-primary-500 rounded-full flex items-center justify-center shadow-lg shadow-primary-500/30 mb-6 border-4 border-primary-100 text-white">
                 <Heart className="w-10 h-10 fill-current" />
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">รอรับความสุขได้เลย</h4>
-              <p className="text-gray-600">ติดตามสถานะไรเดอร์ได้แบบเรียลไทม์ และรอรับของที่หน้าบ้าน</p>
+              <h4 className="text-xl font-bold text-gray-900 mb-2">
+                รอรับความสุขได้เลย
+              </h4>
+              <p className="text-gray-600">
+                ติดตามสถานะไรเดอร์ได้แบบเรียลไทม์ และรอรับของที่หน้าบ้าน
+              </p>
             </div>
           </div>
         </div>
@@ -411,7 +479,8 @@ export default function Home() {
               ร่วมเติบโตไปกับ อาตี๋น้อย
             </h3>
             <p className="text-gray-600 text-lg">
-              ไม่ว่าคุณจะเป็นเจ้าของร้านอาหาร หรืออยากหารายได้เสริม เรายินดีต้อนรับ
+              ไม่ว่าคุณจะเป็นเจ้าของร้านอาหาร หรืออยากหารายได้เสริม
+              เรายินดีต้อนรับ
             </p>
           </div>
 
@@ -425,10 +494,13 @@ export default function Home() {
                 <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-red-500 shadow-sm mb-6">
                   <Store className="w-7 h-7" />
                 </div>
-                <h4 className="text-2xl font-bold text-gray-900 mb-3">สมัครเป็นพาร์ทเนอร์ร้านค้า</h4>
+                <h4 className="text-2xl font-bold text-gray-900 mb-3">
+                  สมัครเป็นพาร์ทเนอร์ร้านค้า
+                </h4>
                 <p className="text-gray-600 mb-8 max-w-sm">
-                  เพิ่มยอดขาย ขยายฐานลูกค้า ให้เราช่วยส่งต่อความอร่อยของคุณไปให้ไกลกว่าเดิม
-                  สมัครง่าย อนุมัติไว
+                  เพิ่มยอดขาย ขยายฐานลูกค้า
+                  ให้เราช่วยส่งต่อความอร่อยของคุณไปให้ไกลกว่าเดิม สมัครง่าย
+                  อนุมัติไว
                 </p>
                 <a
                   href="/register-shop"
@@ -453,9 +525,12 @@ export default function Home() {
                 <div className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-white shadow-sm mb-6 border border-white/20">
                   <Motorcycle className="w-7 h-7" />
                 </div>
-                <h4 className="text-2xl font-bold text-white mb-3">สมัครเป็นไรเดอร์</h4>
+                <h4 className="text-2xl font-bold text-white mb-3">
+                  สมัครเป็นไรเดอร์
+                </h4>
                 <p className="text-gray-300 mb-8 max-w-sm">
-                  รับงานอิสระ รายได้ดี เลือกเวลาทำงานได้เอง มีโบนัสและสวัสดิการดูแลตลอดเส้นทาง
+                  รับงานอิสระ รายได้ดี เลือกเวลาทำงานได้เอง
+                  มีโบนัสและสวัสดิการดูแลตลอดเส้นทาง
                 </p>
                 <a
                   href="/register-rider"
@@ -479,11 +554,13 @@ export default function Home() {
                 <div className="w-8 h-8 bg-primary-600 rounded-full flex items-center justify-center mr-3">
                   <Bike className="text-white w-5 h-5" />
                 </div>
-                <span className="font-bold text-xl text-white tracking-tight">อาตี๋น้อย เดลิเวอรี่</span>
+                <span className="font-bold text-xl text-white tracking-tight">
+                  อาตี๋น้อย เดลิเวอรี่
+                </span>
               </div>
               <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                แอปพลิเคชันจัดส่งอาหารและพัสดุ
-                ที่มุ่งมั่นให้บริการที่ดีที่สุด เพื่อความสะดวกสบายในชีวิตประจำวันของคุณ
+                แอปพลิเคชันจัดส่งอาหารและพัสดุ ที่มุ่งมั่นให้บริการที่ดีที่สุด
+                เพื่อความสะดวกสบายในชีวิตประจำวันของคุณ
               </p>
               <div className="flex space-x-4">
                 <a
@@ -544,9 +621,12 @@ export default function Home() {
               <h4 className="text-white font-bold mb-6">บริการ</h4>
               <ul className="space-y-3 text-sm">
                 <li>
-                  <a href="#" className="hover:text-primary-500 transition">
+                  <button
+                    onClick={() => setShowQRModal(true)}
+                    className="hover:text-primary-500 transition cursor-pointer text-left w-full"
+                  >
                     สั่งอาหารออนไลน์
-                  </a>
+                  </button>
                 </li>
                 <li>
                   <a href="#" className="hover:text-primary-500 transition">
@@ -572,7 +652,7 @@ export default function Home() {
               <ul className="space-y-4 text-sm">
                 <li className="flex items-start">
                   <MapPin className="w-5 h-5 mr-3 text-primary-500 flex-shrink-0 mt-0.5" />
-                  <span>123 ถนนสุขุมวิท แขวงคลองเตย เขตคลองเตย กรุงเทพมหานคร 10110</span>
+                  <span>404/1 ม.1 ต.แม่ปะ แม่สอด ตาก 63110</span>
                 </li>
                 <li className="flex items-center">
                   <Phone className="w-5 h-5 mr-3 text-primary-500 flex-shrink-0" />
@@ -580,7 +660,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-center">
                   <Mail className="w-5 h-5 mr-3 text-primary-500 flex-shrink-0" />
-                  <span>support@ahteenoi.com</span>
+                  <span>ahteenoi@gmail.com</span>
                 </li>
               </ul>
             </div>
@@ -590,12 +670,64 @@ export default function Home() {
             <p>&copy; 2026 Ahteenoi Delivery. All rights reserved.</p>
             <div className="mt-4 md:mt-0 flex space-x-4">
               <span>
-                Made with <Heart className="w-3 h-3 inline text-red-500 fill-current" /> in Thailand
+                Made with{" "}
+                <Heart className="w-3 h-3 inline text-red-500 fill-current" />{" "}
+                in Thailand
               </span>
             </div>
           </div>
         </div>
       </footer>
+
+      {/* QR Code Modal */}
+      {showQRModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            onClick={() => setShowQRModal(false)}
+          ></div>
+          <div className="bg-white rounded-3xl p-8 max-w-sm w-full relative z-10 shadow-2xl transform transition-all">
+            <button
+              onClick={() => setShowQRModal(false)}
+              className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition"
+            >
+              <X className="w-6 h-6 text-gray-500" />
+            </button>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <ShoppingCart className="w-8 h-8 text-primary-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                โหลดแอปเลย!
+              </h3>
+              <p className="text-gray-600 mb-8">
+                สแกน QR Code เพื่อดาวน์โหลดแอปและเริ่มสั่งอาหารได้ทันที
+              </p>
+
+              <div className="bg-gray-50 p-6 rounded-2xl mb-8 border-2 border-dashed border-gray-200">
+                <div className="aspect-square bg-white rounded-xl shadow-inner flex items-center justify-center relative group">
+                  {/* Placeholder for QR Code */}
+                  <div className="p-4">
+                    <img
+                      src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://ahteenoi.com/download"
+                      alt="QR Code"
+                      className="w-full h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <button
+                onClick={() => setShowQRModal(false)}
+                className="w-full py-4 bg-primary-600 hover:bg-primary-700 text-white font-bold rounded-2xl shadow-lg transition-all"
+              >
+                เข้าใจแล้ว
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
