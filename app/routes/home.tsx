@@ -243,7 +243,7 @@ export default function Home() {
               <div className="mt-10 flex items-center justify-center lg:justify-start space-x-6 text-sm text-gray-500 font-medium">
                 <div className="flex items-center">
                   <CheckCircle className="w-4 h-4 text-green-500 mr-1" />{" "}
-                  ร้านค้ากว่า 1,000+ ร้าน
+                  ร้านค้ากว่า 200+ ร้าน
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-4 h-4 text-green-500 mr-1" />{" "}
