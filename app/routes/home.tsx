@@ -74,7 +74,8 @@ export default function Home() {
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center cursor-pointer">
               <div className="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center mr-3 shadow-lg">
-                <Bike className="text-white w-6 h-6" />
+                {/* <Bike className="text-white w-6 h-6" /> */}
+                <img src="/logo.webp" alt="logo" className="rounded-full w-10" />
               </div>
               <span className="font-bold text-2xl text-gray-900 tracking-tight">
                 อาตี๋น้อย <span className="text-primary-600">เดลิเวอรี่</span>
@@ -254,7 +255,8 @@ export default function Home() {
                 <div className="absolute top-0 inset-x-0 h-6 bg-gray-900 z-30 rounded-b-3xl w-40 mx-auto"></div>
                 {/* Mockup Screen Image */}
                 <img
-                  src="https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&fit=crop&w=400&q=80"
+                  src="/rider.webp"
+                  // src="https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&fit=crop&w=400&q=80" 
                   alt="App Screen"
                   className="w-full h-full object-cover opacity-90"
                 />
@@ -545,7 +547,12 @@ export default function Home() {
             <div>
               <div className="flex items-center mb-6">
                 <div className="w-8 h-8 bg-primary-600 rounded-full flex items-center justify-center mr-3">
-                  <Bike className="text-white w-5 h-5" />
+                  {/* <Bike className="text-white w-5 h-5" /> */}
+                  <img
+                    src="/logo.webp"
+                    alt="logo"
+                    className="rounded-full w-10"
+                  />
                 </div>
                 <span className="font-bold text-xl text-white tracking-tight">
                   อาตี๋น้อย เดลิเวอรี่
@@ -579,7 +586,7 @@ export default function Home() {
 
             {/* Links 1 */}
             <div>
-              <h4 className="text-white font-bold mb-6">เกี่ยวกับเรา</h4>
+              {/* <h4 className="text-white font-bold mb-6">เกี่ยวกับเรา</h4>
               <ul className="space-y-3 text-sm">
                 <li>
                   <a href="#" className="hover:text-primary-500 transition">
@@ -606,7 +613,7 @@ export default function Home() {
                     เงื่อนไขการให้บริการ
                   </a>
                 </li>
-              </ul>
+              </ul> */}
             </div>
 
             {/* Links 2 */}
@@ -622,17 +629,26 @@ export default function Home() {
                   </button>
                 </li>
                 <li>
-                  <button onClick={()=>setShowQRModal(true)} className="hover:text-primary-500 transition">
+                  <button
+                    onClick={() => setShowQRModal(true)}
+                    className="hover:text-primary-500 transition"
+                  >
                     ส่งพัสดุด่วน
                   </button>
                 </li>
                 <li>
-                  <button onClick={()=>setShowQRModal(true)} className="hover:text-primary-500 transition">
+                  <button
+                    onClick={() => setShowQRModal(true)}
+                    className="hover:text-primary-500 transition"
+                  >
                     สำหรับร้านค้า
                   </button>
                 </li>
                 <li>
-                  <button onClick={()=>setShowQRModal(true)} className="hover:text-primary-500 transition">
+                  <button
+                    onClick={() => setShowQRModal(true)}
+                    className="hover:text-primary-500 transition"
+                  >
                     สำหรับองค์กร (Corporate)
                   </button>
                 </li>
@@ -663,7 +679,7 @@ export default function Home() {
             <p>&copy; 2026 Ahteenoi Delivery. All rights reserved.</p>
             <div className="mt-4 md:mt-0 flex space-x-4">
               <span>
-                Made with{" "}
+                Made with Panthakit Totid{" "}
                 <Heart className="w-3 h-3 inline text-red-500 fill-current" />{" "}
                 in Thailand
               </span>
