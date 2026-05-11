@@ -75,7 +75,11 @@ export default function Home() {
             <div className="flex-shrink-0 flex items-center cursor-pointer">
               <div className="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center mr-3 shadow-lg">
                 {/* <Bike className="text-white w-6 h-6" /> */}
-                <img src="/logo.webp" alt="logo" className="rounded-full w-10" />
+                <img
+                  src="/logo.webp"
+                  alt="logo"
+                  className="rounded-full w-10"
+                />
               </div>
               <span className="font-bold text-2xl text-gray-900 tracking-tight">
                 อาตี๋น้อย <span className="text-primary-600">เดลิเวอรี่</span>
@@ -256,7 +260,7 @@ export default function Home() {
                 {/* Mockup Screen Image */}
                 <img
                   src="/rider.webp"
-                  // src="https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&fit=crop&w=400&q=80" 
+                  // src="https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&fit=crop&w=400&q=80"
                   alt="App Screen"
                   className="w-full h-full object-cover opacity-90"
                 />
@@ -446,21 +450,21 @@ export default function Home() {
                 โปรโมชั่นพิเศษ
               </span>
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4">
-                ลูกค้าใหม่ ส่งฟรี! 3 ครั้งแรก*
+                ลูกค้าใหม่ มีแถม! โค้ดส่วนลด 200 บาท*
               </h3>
               <p className="text-lg text-gray-200 mb-8 max-w-2xl">
                 เพียงกรอกโค้ด{" "}
                 <span className="font-mono bg-white/20 px-2 py-1 rounded text-yellow-300 font-bold tracking-widest">
                   AHTEENEW
                 </span>{" "}
-                เมื่อสั่งขั้นต่ำ 150 บาท
+                ไม่มีขั้นต่ำ
               </p>
-              <a
-                href="#download"
+              <button
+                onClick={() => setShowQRModal(true)}
                 className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-3 rounded-full font-bold text-lg transition shadow-lg transform hover:-translate-y-1"
               >
                 สั่งเลย
-              </a>
+              </button>
             </div>
           </div>
         </div>
