@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 import { 
   Store, 
   ShoppingBag, 
@@ -20,17 +21,51 @@ export async function action({ request }: Route.ActionArgs) {
   const formData = await request.formData();
   const data = Object.fromEntries(formData.entries());
   
-  // Simulate database delay
-  await new Promise((resolve) => setTimeout(resolve, 1500));
+  try {
+    // IMPORTANT: Replace the URL below with your actual Google Apps Script Web App URL
+    // It should look like: https://script.google.com/macros/s/XXXXX/exec
+    const SCRIPT_URL = ""; 
 
-  console.log("Shop Registration Data:", data);
+    const response = await axios.post(SCRIPT_URL, {
+      action: "create",
+      shopName: data.shopName,
+      ownerName: data.ownerName,
+      category: data.category,
+      phone: data.phone,
+      lineId: data.lineId,
+      address: data.address,
+      terms: data.terms,
+    }, {
+      headers: {
+        "Content-Type": "application/json",
+      }
+    });
 
-  // Here you would normally save to a database
-  return { 
-    success: true, 
-    title: "สมัครสำเร็จ!", 
-    message: "ระบบได้รับข้อมูลของคุณเรียบร้อยแล้ว ทีมงานจะติดต่อกลับโดยเร็วที่สุด" 
-  };
+    console.log("Shop Registration Data submitted successfully:", response.data);
+
+    return { 
+      success: true, 
+      title: "สมัครสำเร็จ!", 
+      message: "ระบบได้รับข้อมูลของคุณเรียบร้อยแล้ว ทีมงานจะติดต่อกลับโดยเร็วที่สุด" 
+    };
+  } catch (error: any) {
+    if (axios.isAxiosError(error)) {
+      console.error("Axios Error Response:", {
+        status: error.response?.status,
+        statusText: error.response?.statusText,
+        data: error.response?.data,
+        message: error.message
+      });
+    } else {
+      console.error("Shop Registration Error:", error);
+    }
+
+    return { 
+      success: false, 
+      title: "เกิดข้อผิดพลาด", 
+      message: "ไม่สามารถส่งข้อมูลได้ในขณะนี้ กรุณาลองใหม่อีกครั้ง" 
+    };
+  }
 }
 
 export default function RegisterShop() {
