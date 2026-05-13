@@ -453,9 +453,9 @@ export default function Home() {
                 ลูกค้าใหม่ มีแถม! โค้ดส่วนลด 200 บาท*
               </h3>
               <p className="text-lg text-gray-200 mb-8 max-w-2xl">
-                เพียงกรอกโค้ด{" "}
+                เพียงใช้โค้ด{" "}
                 <span className="font-mono bg-white/20 px-2 py-1 rounded text-yellow-300 font-bold tracking-widest">
-                  AHTEENEW
+                  NEW200
                 </span>{" "}
                 ไม่มีขั้นต่ำ
               </p>
