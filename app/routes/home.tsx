@@ -23,12 +23,20 @@ import {
   Camera,
   MessageCircle,
 } from "lucide-react";
+import type { LinksFunction } from "react-router";
 
 // Fallback for missing brand icons in Lucide v1.x
 const Facebook = Globe;
 const Instagram = Camera;
 const Twitter = MessageCircle;
 const Motorcycle = Motorbike;
+
+export const links: LinksFunction = () => [
+  {
+    rel: "stylesheet",
+    href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css",
+  },
+];
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -219,7 +227,8 @@ export default function Home() {
                   href="https://apps.apple.com/th/app/%E0%B8%AD%E0%B8%B2%E0%B8%95-%E0%B8%99-%E0%B8%AD%E0%B8%A2/id6759367582"
                   className="flex items-center justify-center bg-gray-900 text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition w-full sm:w-auto transform hover:-translate-y-1"
                 >
-                  <Apple className="w-8 h-8 mr-3" />
+                  {/* <Apple className="w-8 h-8 mr-3" /> */}
+                  <i className="fab fa-apple text-3xl mr-3"></i>
                   <div className="text-left">
                     <div className="text-xs">Download on the</div>
                     <div className="text-lg font-semibold -mt-1">App Store</div>
@@ -229,7 +238,8 @@ export default function Home() {
                   href="https://play.google.com/store/apps/details?id=com.ahteenoidelivery.appuser&fbclid=IwY2xjawRtNGJleHRuA2FlbQIxMABicmlkETEwU2EwWldJU0N3WXpuRFFOc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHmLCjeGLSrMv7ToK039Czj8zX0varOiNoLz_w28TJnwCgGoHnvegaE-jlbBq_aem_IZj1DwcF-Oo3g6WgqFpFXA"
                   className="flex items-center justify-center bg-white border border-gray-200 text-gray-900 px-6 py-3 rounded-xl hover:bg-gray-50 transition shadow-sm w-full sm:w-auto transform hover:-translate-y-1"
                 >
-                  <Play className="w-8 h-8 mr-3 text-primary-500 fill-primary-500" />
+                  {/* <Play className="w-8 h-8 mr-3 text-primary-500 fill-primary-500" /> */}
+                  <i className="fab fa-google-play text-3xl mr-3"></i>
                   <div className="text-left">
                     <div className="text-xs">GET IT ON</div>
                     <div className="text-lg font-semibold -mt-1">
@@ -568,22 +578,22 @@ export default function Home() {
               </p>
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/profile.php?id=61577899289210"
                   className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 hover:text-white transition"
                 >
-                  <Facebook className="w-5 h-5" />
+                  <i className="fab fa-facebook-f text-2xl"></i>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.youtube.com/@%E0%B8%AD%E0%B8%B2%E0%B8%95%E0%B8%B5%E0%B9%8B%E0%B8%99%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B9%80%E0%B8%94%E0%B8%A5%E0%B8%B4%E0%B9%80%E0%B8%A7%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%A3%E0%B8%B5%E0%B9%88/videos"
                   className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 hover:text-white transition"
                 >
-                  <Instagram className="w-5 h-5" />
+                  <i className="fab fa-youtube text-2xl"></i>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.tiktok.com/@ahteenoigroup997"
                   className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 hover:text-white transition"
                 >
-                  <Twitter className="w-5 h-5" />
+                  <i className="fab fa-tiktok text-2xl"></i>
                 </a>
               </div>
             </div>
