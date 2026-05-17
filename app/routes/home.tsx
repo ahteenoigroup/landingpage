@@ -733,7 +733,7 @@ export default function Home() {
                   {/* Placeholder for QR Code */}
                   <div className="p-4">
                     <img
-                      src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://www.facebook.com/profile.php?id=61577899289210"
+                      src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://linktr.ee/ahteenoigroup"
                       alt="QR Code"
                       className="w-full h-full"
                     />
