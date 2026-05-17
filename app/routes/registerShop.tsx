@@ -76,6 +76,33 @@ export async function action({ request }: Route.ActionArgs) {
   }
 }
 
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "สมัครเป็นพาร์ทเนอร์ร้านค้า - อาตี๋น้อย เดลิเวอรี่" },
+    {
+      name: "description",
+      content:
+        "ขยายธุรกิจของคุณ เพิ่มยอดขาย และเข้าถึงลูกค้าได้มากขึ้น สมัครเป็นพาร์ทเนอร์ร้านค้ากับอาตี๋น้อย เดลิเวอรี่ วันนี้",
+    },
+    { property: "og:title", content: "สมัครเป็นพาร์ทเนอร์ร้านค้า - อาตี๋น้อย เดลิเวอรี่" },
+    {
+      property: "og:description",
+      content: "ขยายธุรกิจของคุณ เพิ่มยอดขาย และเข้าถึงลูกค้าได้มากขึ้น ร่วมเป็นพาร์ทเนอร์กับเรา",
+    },
+    { property: "og:image", content: "https://ahteenoi.com/logo.webp" },
+    { property: "og:url", content: "https://ahteenoi.com/register-shop" },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "สมัครเป็นพาร์ทเนอร์ร้านค้า - อาตี๋น้อย เดลิเวอรี่" },
+    {
+      name: "twitter:description",
+      content: "ขยายธุรกิจของคุณ เพิ่มยอดขาย และเข้าถึงลูกค้าได้มากขึ้น",
+    },
+    { name: "twitter:image", content: "https://ahteenoi.com/logo.webp" },
+    { tagName: "link", rel: "canonical", href: "https://ahteenoi.com/register-shop" },
+  ];
+}
+
 export default function RegisterShop() {
   const actionData = useActionData<typeof action>();
   const navigation = useNavigation();
@@ -125,9 +152,9 @@ export default function RegisterShop() {
           <div className="mx-auto w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-lg">
             <Store className="text-red-600 w-8 h-8" />
           </div>
-          <h2 className="text-3xl font-bold text-white mb-2">
+          <h1 className="text-3xl font-bold text-white mb-2">
             ร่วมเป็นพาร์ทเนอร์กับเรา
-          </h2>
+          </h1>
           <p className="text-red-100 text-sm sm:text-base">
             ขยายธุรกิจของคุณ เพิ่มยอดขาย และเข้าถึงลูกค้าได้มากขึ้น
           </p>

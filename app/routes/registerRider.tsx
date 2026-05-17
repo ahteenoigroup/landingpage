@@ -79,6 +79,33 @@ export async function action({ request }: Route.ActionArgs) {
   }
 }
 
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "สมัครเป็นไรเดอร์ - อาตี๋น้อย เดลิเวอรี่" },
+    {
+      name: "description",
+      content:
+        "ร่วมเป็นครอบครัวไรเดอร์กับอาตี๋น้อย เดลิเวอรี่ สร้างรายได้ง่ายๆ ขับเมื่อไหร่ก็ได้ที่คุณต้องการ สมัครง่าย อนุมัติไว",
+    },
+    { property: "og:title", content: "สมัครเป็นไรเดอร์ - อาตี๋น้อย เดลิเวอรี่" },
+    {
+      property: "og:description",
+      content: "สร้างรายได้ง่ายๆ ขับเมื่อไหร่ก็ได้ที่คุณต้องการ ร่วมเป็นครอบครัวไรเดอร์กับเราวันนี้",
+    },
+    { property: "og:image", content: "https://ahteenoi.com/logo.webp" },
+    { property: "og:url", content: "https://ahteenoi.com/register-rider" },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "สมัครเป็นไรเดอร์ - อาตี๋น้อย เดลิเวอรี่" },
+    {
+      name: "twitter:description",
+      content: "สร้างรายได้ง่ายๆ ขับเมื่อไหร่ก็ได้ที่คุณต้องการ",
+    },
+    { name: "twitter:image", content: "https://ahteenoi.com/logo.webp" },
+    { tagName: "link", rel: "canonical", href: "https://ahteenoi.com/register-rider" },
+  ];
+}
+
 export default function RegisterRider() {
   const actionData = useActionData<typeof action>();
   const navigation = useNavigation();
@@ -128,9 +155,9 @@ export default function RegisterRider() {
           <div className="mx-auto w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-lg">
             <Bike className="text-red-600 w-8 h-8" />
           </div>
-          <h2 className="text-3xl font-bold text-white mb-2">
+          <h1 className="text-3xl font-bold text-white mb-2">
             ร่วมเป็นครอบครัวไรเดอร์กับเรา
-          </h2>
+          </h1>
           <p className="text-red-100 text-sm sm:text-base">
             สร้างรายได้ง่ายๆ ขับเมื่อไหร่ก็ได้ที่คุณต้องการ
             กรอกข้อมูลด้านล่างเพื่อเริ่มต้น

@@ -46,6 +46,22 @@ export function meta({}: Route.MetaArgs) {
       content:
         "บริการจัดส่งอาหาร เครื่องดื่ม และพัสดุ ที่รู้ใจคุณที่สุด ส่งไว ปลอดภัย ค่าส่งเป็นมิตร สั่งง่ายผ่านแอปพลิเคชันได้แล้ววันนี้",
     },
+    { property: "og:title", content: "อาตี๋น้อย เดลิเวอรี่ - สั่งอาหาร ส่งพัสดุ รวดเร็วทันใจ" },
+    {
+      property: "og:description",
+      content: "บริการจัดส่งอาหาร เครื่องดื่ม และพัสดุ ส่งไว ปลอดภัย ค่าส่งเป็นมิตร สั่งง่ายผ่านแอปได้แล้ววันนี้",
+    },
+    { property: "og:image", content: "https://ahteenoi.com/logo.webp" },
+    { property: "og:url", content: "https://ahteenoi.com/" },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "อาตี๋น้อย เดลิเวอรี่ - สั่งอาหาร ส่งพัสดุ รวดเร็วทันใจ" },
+    {
+      name: "twitter:description",
+      content: "บริการจัดส่งอาหาร เครื่องดื่ม และพัสดุ ส่งไว ปลอดภัย ค่าส่งเป็นมิตร",
+    },
+    { name: "twitter:image", content: "https://ahteenoi.com/logo.webp" },
+    { tagName: "link", rel: "canonical", href: "https://ahteenoi.com/" },
   ];
 }
 
@@ -66,8 +82,41 @@ export default function Home() {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "อาตี๋น้อย เดลิเวอรี่",
+    image: "https://ahteenoi.com/logo.webp",
+    "@id": "https://ahteenoi.com",
+    url: "https://ahteenoi.com",
+    telephone: "085-598-9548",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "404/1 ม.1 ต.แม่ปะ",
+      addressLocality: "แม่สอด",
+      addressRegion: "ตาก",
+      postalCode: "63110",
+      addressCountry: "TH",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 16.7161,
+      longitude: 98.5761,
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "00:00",
+      closes: "23:59",
+    },
+  };
+
   return (
     <div className="font-sans text-gray-800 antialiased overflow-x-hidden relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* Navigation */}
       <nav
         id="navbar"
@@ -85,7 +134,7 @@ export default function Home() {
                 {/* <Bike className="text-white w-6 h-6" /> */}
                 <img
                   src="/logo.webp"
-                  alt="logo"
+                  alt="โลโก้ อาตี๋น้อย เดลิเวอรี่"
                   className="rounded-full w-10"
                 />
               </div>
@@ -271,7 +320,7 @@ export default function Home() {
                 <img
                   src="/rider.webp"
                   // src="https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&fit=crop&w=400&q=80"
-                  alt="App Screen"
+                  alt="ตัวอย่างหน้าแอปพลิเคชัน อาตี๋น้อย เดลิเวอรี่ บนมือถือ"
                   className="w-full h-full object-cover opacity-90"
                 />
                 {/* Mockup UI Overlay */}
@@ -452,7 +501,7 @@ export default function Home() {
           <div className="relative rounded-3xl overflow-hidden bg-gray-900 shadow-2xl">
             <img
               src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80"
-              alt="Delicious Food"
+              alt="อาหารอร่อยหลากหลายเมนูพร้อมเสิร์ฟผ่าน อาตี๋น้อย เดลิเวอรี่"
               className="absolute inset-0 w-full h-full object-cover opacity-40"
             />
             <div className="relative p-10 md:p-16 flex flex-col items-center text-center">
@@ -564,7 +613,7 @@ export default function Home() {
                   {/* <Bike className="text-white w-5 h-5" /> */}
                   <img
                     src="/logo.webp"
-                    alt="logo"
+                    alt="โลโก้ อาตี๋น้อย เดลิเวอรี่"
                     className="rounded-full w-10"
                   />
                 </div>
