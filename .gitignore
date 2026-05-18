@@ -1,7 +1,14 @@
+# OS files
 .DS_Store
-.env
-/node_modules/
 
-# React Router
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Dependencies
+/node_modules/
 /.react-router/
 /build/

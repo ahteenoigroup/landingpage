@@ -31,8 +31,21 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#dc2626" />
+        <meta property="og:site_name" content="ahteenoi" />
         <Meta />
         <Links />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `{
+  "@context" : "https://schema.org",
+  "@type" : "WebSite",
+  "name" : "ahteenoi",
+  "alternateName" : ["Ah-Tee-Noi", "อาตี๋น้อย"],
+  "url" : "http://ahteenoi.com/"
+}`,
+          }}
+        />
       </head>
       <body>
         {children}
