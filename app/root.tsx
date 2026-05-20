@@ -38,12 +38,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: `{
-  "@context" : "https://schema.org",
-  "@type" : "WebSite",
-  "name" : "ahteenoi",
-  "alternateName" : ["Ah-Tee-Noi", "อาตี๋น้อย"],
-  "url" : "http://ahteenoi.com/"
-}`,
+                "@context" : "https://schema.org",
+                "@type" : "WebSite",
+                "name" : "ahteenoi",
+                "alternateName" : ["Ah-Tee-Noi", "อาตี๋น้อย"],
+                "url" : "http://ahteenoi.com/"
+          }`,
           }}
         />
       </head>
