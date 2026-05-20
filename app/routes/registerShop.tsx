@@ -266,7 +266,7 @@ export default function RegisterShop() {
                     required
                     pattern="[0-9]{9,10}"
                     className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 transition-all duration-200 focus:outline-none focus:border-red-500 focus:ring-3 focus:ring-red-500/15"
-                    placeholder="08XXXXXXXX"
+                    placeholder="0812345678"
                   />
                 </div>
               </div>

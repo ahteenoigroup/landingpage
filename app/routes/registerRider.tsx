@@ -262,11 +262,11 @@ export default function RegisterRider() {
                     <option value="" disabled>
                       เลือกประเภทรถ
                     </option>
-                    <option value="motorcycle">
+                    <option value="มอเตอร์ไซค์">
                       รถจักรยานยนต์ (มอเตอร์ไซค์)
                     </option>
-                    <option value="car">รถยนต์</option>
-                    <option value="pickup">รถกระบะ</option>
+                    <option value="รถยนต์">รถยนต์</option>
+                    <option value="รถกระบะ">รถกระบะ</option>
                   </select>
                   <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                     <ChevronDown className="h-5 w-5 text-gray-400" />
@@ -398,7 +398,7 @@ export default function RegisterRider() {
         </div>
 
         {/* Footer */}
-        <p className="text-center text-gray-500 text-sm py-6">
+        {/* <p className="text-center text-gray-500 text-sm py-6">
           มีข้อสงสัย? ติดต่อ{" "}
           <a
             href="#"
@@ -406,7 +406,7 @@ export default function RegisterRider() {
           >
             ศูนย์ช่วยเหลือ
           </a>
-        </p>
+        </p> */}
       </div>
 
       {/* Status Modal */}
