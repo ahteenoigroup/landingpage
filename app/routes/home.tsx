@@ -500,7 +500,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-3xl overflow-hidden bg-gray-900 shadow-2xl">
             <img
-              src="./riderPicxel.gif"
+              src="/riderPicxel.gif"
               alt="อาหารอร่อยหลากหลายเมนูพร้อมเสิร์ฟผ่าน อาตี๋น้อย เดลิเวอรี่"
               className="absolute inset-0 w-full h-full object-cover opacity-40"
             />
