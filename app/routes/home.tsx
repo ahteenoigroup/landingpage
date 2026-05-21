@@ -500,7 +500,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-3xl overflow-hidden bg-gray-900 shadow-2xl">
             <img
-              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80"
+              src="./riderPicxel.gif"
               alt="อาหารอร่อยหลากหลายเมนูพร้อมเสิร์ฟผ่าน อาตี๋น้อย เดลิเวอรี่"
               className="absolute inset-0 w-full h-full object-cover opacity-40"
             />
@@ -575,7 +575,7 @@ export default function Home() {
                 <Motorcycle className="w-64 h-64 text-white" />
               </div>
               <img
-                src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?auto=format&fit=crop&w=600&q=80"
+                src=""
                 alt="Rider"
                 className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-30 transition duration-500 mix-blend-overlay"
               />
