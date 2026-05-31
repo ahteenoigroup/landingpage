@@ -768,33 +768,63 @@ export default function Home() {
 
             <div className="text-center">
               <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <ShoppingCart className="w-8 h-8 text-primary-600" />
+                <Download className="w-8 h-8 text-primary-600" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                โหลดแอปเลย!
+                ดาวน์โหลดแอป
               </h3>
-              <p className="text-gray-600 mb-8">
-                สแกน QR Code เพื่อดาวน์โหลดแอปและเริ่มสั่งอาหารได้ทันที
+              <p className="text-gray-600 mb-6">
+                เริ่มสั่งอาหารและใช้บริการของเราได้ง่ายๆ ผ่านแอปพลิเคชัน
               </p>
 
-              <div className="bg-gray-50 p-6 rounded-2xl mb-8 border-2 border-dashed border-gray-200">
-                <div className="aspect-square bg-white rounded-xl shadow-inner flex items-center justify-center relative group">
-                  {/* Placeholder for QR Code */}
-                  <div className="p-4">
-                    <img
-                      src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://linktr.ee/ahteenoigroup"
-                      alt="QR Code"
-                      className="w-full h-full"
-                    />
+              {/* Download Buttons */}
+              <div className="flex flex-col space-y-3 mb-8">
+                <a
+                  href="https://apps.apple.com/th/app/%E0%B8%AD%E0%B8%B2%E0%B8%95-%E0%B8%99-%E0%B8%AD%E0%B8%A2/id6759367582"
+                  className="flex items-center justify-center bg-gray-900 text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition shadow-md"
+                >
+                  <i className="fab fa-apple text-2xl mr-3"></i>
+                  <div className="text-left">
+                    <div className="text-[10px] leading-none">Download on the</div>
+                    <div className="text-base font-semibold">App Store</div>
                   </div>
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.ahteenoidelivery.appuser"
+                  className="flex items-center justify-center bg-white border border-gray-200 text-gray-900 px-6 py-3 rounded-xl hover:bg-gray-50 transition shadow-sm"
+                >
+                  <i className="fab fa-google-play text-2xl mr-3"></i>
+                  <div className="text-left">
+                    <div className="text-[10px] leading-none">GET IT ON</div>
+                    <div className="text-base font-semibold">Google Play</div>
+                  </div>
+                </a>
+              </div>
+
+              <div className="relative mb-6">
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full border-t border-gray-200"></div>
+                </div>
+                <div className="relative flex justify-center text-sm">
+                  <span className="px-2 bg-white text-gray-500">หรือสแกน QR Code</span>
+                </div>
+              </div>
+
+              <div className="bg-gray-50 p-4 rounded-2xl mb-6 border border-gray-100">
+                <div className="aspect-square bg-white rounded-xl shadow-inner flex items-center justify-center p-2">
+                  <img
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://linktr.ee/ahteenoigroup"
+                    alt="QR Code"
+                    className="w-full h-full"
+                  />
                 </div>
               </div>
 
               <button
                 onClick={() => setShowQRModal(false)}
-                className="w-full py-4 bg-primary-600 hover:bg-primary-700 text-white font-bold rounded-2xl shadow-lg transition-all"
+                className="w-full py-3 text-gray-500 font-medium hover:text-gray-700 transition"
               >
-                เข้าใจแล้ว
+                ปิดหน้าต่าง
               </button>
             </div>
           </div>
