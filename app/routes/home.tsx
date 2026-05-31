@@ -46,19 +46,27 @@ export function meta({}: Route.MetaArgs) {
       content:
         "บริการจัดส่งอาหาร เครื่องดื่ม และพัสดุ ที่รู้ใจคุณที่สุด ส่งไว ปลอดภัย ค่าส่งเป็นมิตร สั่งง่ายผ่านแอปพลิเคชันได้แล้ววันนี้",
     },
-    { property: "og:title", content: "อาตี๋น้อย เดลิเวอรี่ - สั่งอาหาร ส่งพัสดุ รวดเร็วทันใจ" },
+    {
+      property: "og:title",
+      content: "อาตี๋น้อย เดลิเวอรี่ - สั่งอาหาร ส่งพัสดุ รวดเร็วทันใจ",
+    },
     {
       property: "og:description",
-      content: "บริการจัดส่งอาหาร เครื่องดื่ม และพัสดุ ส่งไว ปลอดภัย ค่าส่งเป็นมิตร สั่งง่ายผ่านแอปได้แล้ววันนี้",
+      content:
+        "บริการจัดส่งอาหาร เครื่องดื่ม และพัสดุ ส่งไว ปลอดภัย ค่าส่งเป็นมิตร สั่งง่ายผ่านแอปได้แล้ววันนี้",
     },
     { property: "og:image", content: "https://ahteenoi.com/logo.webp" },
     { property: "og:url", content: "https://ahteenoi.com/" },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:title", content: "อาตี๋น้อย เดลิเวอรี่ - สั่งอาหาร ส่งพัสดุ รวดเร็วทันใจ" },
+    {
+      name: "twitter:title",
+      content: "อาตี๋น้อย เดลิเวอรี่ - สั่งอาหาร ส่งพัสดุ รวดเร็วทันใจ",
+    },
     {
       name: "twitter:description",
-      content: "บริการจัดส่งอาหาร เครื่องดื่ม และพัสดุ ส่งไว ปลอดภัย ค่าส่งเป็นมิตร",
+      content:
+        "บริการจัดส่งอาหาร เครื่องดื่ม และพัสดุ ส่งไว ปลอดภัย ค่าส่งเป็นมิตร",
     },
     { name: "twitter:image", content: "https://ahteenoi.com/logo.webp" },
     { tagName: "link", rel: "canonical", href: "https://ahteenoi.com/" },
@@ -69,7 +77,7 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const [showQRModal, setShowQRModal] = useState(false);
+  const [showDownloadModal, setShowDownloadModal] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -105,7 +113,15 @@ export default function Home() {
     },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
       opens: "00:00",
       closes: "23:59",
     },
@@ -174,7 +190,7 @@ export default function Home() {
             {/* CTA Button Desktop */}
             <div className="hidden md:flex items-center space-x-4">
               <button
-                onClick={() => setShowQRModal(true)}
+                onClick={() => setShowDownloadModal(true)}
                 className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-full font-medium transition shadow-md hover:shadow-lg flex items-center"
               >
                 <Download className="w-4 h-4 mr-2" /> โหลดแอปเลย
@@ -235,7 +251,7 @@ export default function Home() {
             </a>
             <a
               href="#download"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => setShowDownloadModal(true)}
               className="block px-3 py-3 mt-4 text-center rounded-md text-base font-medium bg-primary-600 text-white hover:bg-primary-700"
             >
               โหลดแอปเลย
@@ -519,7 +535,7 @@ export default function Home() {
                 ไม่มีขั้นต่ำ
               </p>
               <button
-                onClick={() => setShowQRModal(true)}
+                onClick={() => setShowDownloadModal(true)}
                 className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-3 rounded-full font-bold text-lg transition shadow-lg transform hover:-translate-y-1"
               >
                 สั่งเลย
@@ -575,7 +591,7 @@ export default function Home() {
                 <Motorcycle className="w-64 h-64 text-white" />
               </div>
               <img
-                src=""
+                src="/rider.webp"
                 alt="Rider"
                 className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-30 transition duration-500 mix-blend-overlay"
               />
@@ -685,7 +701,7 @@ export default function Home() {
               <ul className="space-y-3 text-sm">
                 <li>
                   <button
-                    onClick={() => setShowQRModal(true)}
+                    onClick={() => setShowDownloadModal(true)}
                     className="hover:text-primary-500 transition cursor-pointer text-left w-full"
                   >
                     สั่งอาหารออนไลน์
@@ -693,7 +709,7 @@ export default function Home() {
                 </li>
                 <li>
                   <button
-                    onClick={() => setShowQRModal(true)}
+                    onClick={() => setShowDownloadModal(true)}
                     className="hover:text-primary-500 transition"
                   >
                     ส่งพัสดุด่วน
@@ -701,7 +717,7 @@ export default function Home() {
                 </li>
                 <li>
                   <button
-                    onClick={() => setShowQRModal(true)}
+                    onClick={() => setShowDownloadModal(true)}
                     className="hover:text-primary-500 transition"
                   >
                     สำหรับร้านค้า
@@ -709,7 +725,7 @@ export default function Home() {
                 </li>
                 <li>
                   <button
-                    onClick={() => setShowQRModal(true)}
+                    onClick={() => setShowDownloadModal(true)}
                     className="hover:text-primary-500 transition"
                   >
                     สำหรับองค์กร (Corporate)
@@ -751,16 +767,16 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* QR Code Modal */}
-      {showQRModal && (
+      {/* Download App Modal */}
+      {showDownloadModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           <div
             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-            onClick={() => setShowQRModal(false)}
+            onClick={() => setShowDownloadModal(false)}
           ></div>
           <div className="bg-white rounded-3xl p-8 max-w-sm w-full relative z-10 shadow-2xl transform transition-all">
             <button
-              onClick={() => setShowQRModal(false)}
+              onClick={() => setShowDownloadModal(false)}
               className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition"
             >
               <X className="w-6 h-6 text-gray-500" />
@@ -778,14 +794,16 @@ export default function Home() {
               </p>
 
               {/* Download Buttons */}
-              <div className="flex flex-col space-y-3 mb-8">
+              <div className="flex flex-col space-y-3 mb-6">
                 <a
                   href="https://apps.apple.com/th/app/%E0%B8%AD%E0%B8%B2%E0%B8%95-%E0%B8%99-%E0%B8%AD%E0%B8%A2/id6759367582"
                   className="flex items-center justify-center bg-gray-900 text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition shadow-md"
                 >
                   <i className="fab fa-apple text-2xl mr-3"></i>
                   <div className="text-left">
-                    <div className="text-[10px] leading-none">Download on the</div>
+                    <div className="text-[10px] leading-none">
+                      Download on the
+                    </div>
                     <div className="text-base font-semibold">App Store</div>
                   </div>
                 </a>
@@ -801,27 +819,8 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="relative mb-6">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-gray-200"></div>
-                </div>
-                <div className="relative flex justify-center text-sm">
-                  <span className="px-2 bg-white text-gray-500">หรือสแกน QR Code</span>
-                </div>
-              </div>
-
-              <div className="bg-gray-50 p-4 rounded-2xl mb-6 border border-gray-100">
-                <div className="aspect-square bg-white rounded-xl shadow-inner flex items-center justify-center p-2">
-                  <img
-                    src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://linktr.ee/ahteenoigroup"
-                    alt="QR Code"
-                    className="w-full h-full"
-                  />
-                </div>
-              </div>
-
               <button
-                onClick={() => setShowQRModal(false)}
+                onClick={() => setShowDownloadModal(false)}
                 className="w-full py-3 text-gray-500 font-medium hover:text-gray-700 transition"
               >
                 ปิดหน้าต่าง
