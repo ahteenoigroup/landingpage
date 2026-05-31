@@ -24,7 +24,8 @@ export async function action({ request }: Route.ActionArgs) {
   try {
     // IMPORTANT: Replace the URL below with your actual Google Apps Script Web App URL
     // It should look like: https://script.google.com/macros/s/XXXXX/exec
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyyylBKU37agQAcOLJDutC6U7y7FUoZ45Dad-1X8NdU5sFIJ8kakvDl3VYiswCRaXQX9A/exec";
+    const SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbyyylBKU37agQAcOLJDutC6U7y7FUoZ45Dad-1X8NdU5sFIJ8kakvDl3VYiswCRaXQX9A/exec";
 
     const response = await axios.post(
       SCRIPT_URL,
@@ -84,22 +85,33 @@ export function meta({}: Route.MetaArgs) {
       content:
         "ขยายธุรกิจของคุณ เพิ่มยอดขาย และเข้าถึงลูกค้าได้มากขึ้น สมัครเป็นพาร์ทเนอร์ร้านค้ากับอาตี๋น้อย เดลิเวอรี่ วันนี้",
     },
-    { property: "og:title", content: "สมัครเป็นพาร์ทเนอร์ร้านค้า - อาตี๋น้อย เดลิเวอรี่" },
+    {
+      property: "og:title",
+      content: "สมัครเป็นพาร์ทเนอร์ร้านค้า - อาตี๋น้อย เดลิเวอรี่",
+    },
     {
       property: "og:description",
-      content: "ขยายธุรกิจของคุณ เพิ่มยอดขาย และเข้าถึงลูกค้าได้มากขึ้น ร่วมเป็นพาร์ทเนอร์กับเรา",
+      content:
+        "ขยายธุรกิจของคุณ เพิ่มยอดขาย และเข้าถึงลูกค้าได้มากขึ้น ร่วมเป็นพาร์ทเนอร์กับเรา",
     },
     { property: "og:image", content: "https://ahteenoi.com/logo.webp" },
     { property: "og:url", content: "https://ahteenoi.com/register-shop" },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:title", content: "สมัครเป็นพาร์ทเนอร์ร้านค้า - อาตี๋น้อย เดลิเวอรี่" },
+    {
+      name: "twitter:title",
+      content: "สมัครเป็นพาร์ทเนอร์ร้านค้า - อาตี๋น้อย เดลิเวอรี่",
+    },
     {
       name: "twitter:description",
       content: "ขยายธุรกิจของคุณ เพิ่มยอดขาย และเข้าถึงลูกค้าได้มากขึ้น",
     },
     { name: "twitter:image", content: "https://ahteenoi.com/logo.webp" },
-    { tagName: "link", rel: "canonical", href: "https://ahteenoi.com/register-shop" },
+    {
+      tagName: "link",
+      rel: "canonical",
+      href: "https://ahteenoi.com/register-shop",
+    },
   ];
 }
 
