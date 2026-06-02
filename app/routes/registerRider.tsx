@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { Form, useActionData, useNavigation } from "react-router";
 import type { Route } from "./+types/registerRider";
+import { Navbar } from "~/components/Navbar";
 
 export async function action({ request }: Route.ActionArgs) {
   const formData = await request.formData();
@@ -159,8 +160,10 @@ export default function RegisterRider() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-[#f8fafc] bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] bg-[length:24px_24px] font-['Prompt',_sans-serif]">
-      <div className="max-w-3xl w-full space-y-8 bg-white/95 backdrop-blur-[10px] rounded-3xl shadow-xl overflow-hidden">
+    <div className="min-h-screen flex flex-col font-['Prompt',_sans-serif]">
+      <Navbar alwaysSolid={true} />
+      <div className="flex-grow flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 bg-[#f8fafc] bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] bg-[length:24px_24px]">
+        <div className="max-w-3xl w-full space-y-8 bg-white/95 backdrop-blur-[10px] rounded-3xl shadow-xl overflow-hidden">
         {/* Header Section */}
         <div className="bg-gradient-to-r from-red-600 to-rose-700 p-8 text-center sm:p-10">
           <div className="mx-auto w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-lg">
@@ -419,8 +422,9 @@ export default function RegisterRider() {
           </a>
         </p> */}
       </div>
+    </div>
 
-      {/* Status Modal */}
+    {/* Status Modal */}
       {modal.show && (
         <div className="fixed inset-0 z-50 bg-gray-900/60 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300">
           <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full text-center transform transition-transform duration-300 scale-100">
