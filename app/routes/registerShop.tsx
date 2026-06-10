@@ -23,10 +23,12 @@ export async function action({ request }: Route.ActionArgs) {
   const data = Object.fromEntries(formData.entries());
 
   try {
-    // IMPORTANT: Replace the URL below with your actual Google Apps Script Web App URL
-    // It should look like: https://script.google.com/macros/s/XXXXX/exec
-    const SCRIPT_URL =
-      "https://script.google.com/macros/s/AKfycbyyylBKU37agQAcOLJDutC6U7y7FUoZ45Dad-1X8NdU5sFIJ8kakvDl3VYiswCRaXQX9A/exec";
+    // Get the script URL from environment variables
+    const SCRIPT_URL = import.meta.env.VITE_SHOP_SCRIPT_URL;
+
+    if (!SCRIPT_URL) {
+      throw new Error("VITE_SHOP_SCRIPT_URL is not defined in environment variables");
+    }
 
     const response = await axios.post(
       SCRIPT_URL,
