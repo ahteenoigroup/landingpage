@@ -758,9 +758,14 @@ export default function Home() {
             <p>&copy; 2026 Ahteenoi Delivery. All rights reserved.</p>
             <div className="mt-4 md:mt-0 flex space-x-4">
               <span>
-                Made with Panthakit Totid{" "}
-                <Heart className="w-3 h-3 inline text-red-500 fill-current" />{" "}
-                in Thailand
+                Made with{" "}
+                <a
+                  href="https://github.com/mty8421"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Panthakit Totid
+                </a>{" "}
               </span>
             </div>
           </div>
